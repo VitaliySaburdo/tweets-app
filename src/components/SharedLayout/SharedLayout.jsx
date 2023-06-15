@@ -1,5 +1,12 @@
 import { Outlet } from 'react-router-dom';
-import { Header, Link, Wrapper, Nav } from './SharedLayout.styled';
+import {
+  Header,
+  StyledNavLink,
+  Wrapper,
+  Nav,
+  StyledLink,
+  Box,
+} from './SharedLayout.styled';
 import { Container } from '../Container/Container';
 import { Suspense } from 'react';
 import { Footer } from 'components/Footer/Footer';
@@ -12,20 +19,28 @@ export const SharedLayout = () => {
       <Header>
         <Container>
           <Wrapper>
-            <Link to="/" end>
-              {/* <img src={Icon} alt="Twitter Icon" /> */}
-              <span>Tweets App</span>
-            </Link>
             <Nav>
-              <Link to="/tweets">Tweets</Link>
+              <StyledNavLink to="/" end>
+                {/* <img src={Icon} alt="Twitter Icon" /> */}
+                <span>Tweets App</span>
+              </StyledNavLink>
+              <StyledNavLink to="/tweets">Tweets</StyledNavLink>
             </Nav>
+            <Box>
+              <StyledLink href="mailto:vsaburdo@mail.com">
+                vsaburdo@gmail.com
+              </StyledLink>
+              <StyledLink href="tel:+380677764273">
+                +38 067 776 42 73
+              </StyledLink>
+            </Box>
           </Wrapper>
         </Container>
       </Header>
       <Suspense>
         <Outlet />
       </Suspense>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

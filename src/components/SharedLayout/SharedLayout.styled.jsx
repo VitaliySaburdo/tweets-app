@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink, Link } from 'react-router-dom';
 
 export const Header = styled.header`
   height: 70px;
@@ -9,7 +9,7 @@ export const Header = styled.header`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-
+  justify-content: space-between;
   height: 100%;
 `;
 export const Logo = styled.p`
@@ -17,19 +17,18 @@ export const Logo = styled.p`
   margin: 0;
 `;
 export const Nav = styled.nav`
-margin-left: 120px;
   display: flex;
-  gap: 30px;
+  gap: 40px;
 `;
 export const StyledSpan = styled.span`
   color: #5cd3a8;
-    &:hover {
+  &:hover {
     color: #2c9770;
   }
 `;
 
-export const Link = styled(NavLink)`
-  font-family: "Montserrat";
+export const StyledNavLink = styled(NavLink)`
+  font-family: 'Montserrat';
   text-align: center;
   font-style: normal;
   font-weight: 500;
@@ -38,14 +37,36 @@ export const Link = styled(NavLink)`
   text-transform: uppercase;
   color: #a499bd;
   text-decoration: none;
-    transition-duration: 250ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    color:#d13bd1;
+    color: #d13bd1;
   }
 
   &.active {
-    color: #FFFFFF;
+    color: #ffffff;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  font-family: 'Montserrat';
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #a499bd;
+  text-decoration: none;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: #d13bd1;
+  }
+`;
+export const Box = styled.div`
+  display: flex;
+  gap: 40px;
 `;
