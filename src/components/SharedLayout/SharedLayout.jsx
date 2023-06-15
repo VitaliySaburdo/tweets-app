@@ -1,7 +1,8 @@
-import { Outlet } from "react-router-dom";
-import { Header, Link, Wrapper, Nav } from "./SharedLayout.styled";
-import { Container } from "../Container/Container";
-import { Suspense } from "react";
+import { Outlet } from 'react-router-dom';
+import { Header, Link, Wrapper, Nav } from './SharedLayout.styled';
+import { Container } from '../Container/Container';
+import { Suspense } from 'react';
+import { Footer } from 'components/Footer/Footer';
 // import Icon from "../../image/twitter.svg";
 // import {Loader} from '../Loader/Loader'
 
@@ -24,6 +25,7 @@ export const SharedLayout = () => {
       <Suspense>
         <Outlet />
       </Suspense>
+      <Footer />
     </>
   );
 };
