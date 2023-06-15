@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Wrapper,
   Logo,
@@ -8,30 +8,39 @@ import {
   Tweets,
   Followers,
   Button,
-} from "./CardItem.styled";
-import question from "../../image/question.png";
-import line from "../../image/line.png";
-import frame from "../../image/frame.png";
-import logo from "../../image/logo.png";
+} from './CardItem.styled';
+import question from '../../image/question.png';
+import line from '../../image/line.png';
+import frame from '../../image/frame.png';
+import logo from '../../image/logo.png';
 
-export const CardItem = ({ id, user, tweets, followers, avatar }) => {
+export const CardItem = ({
+  id,
+  user,
+  tweets,
+  followers,
+  avatar,
+  onFilterChange,
+}) => {
   const [isFollowing, setIsFollowing] = useState(
     () => localStorage.getItem(`following_${id}`) ?? false
   );
 
   const handleButtonClick = () => {
-    setIsFollowing((prevState) => !prevState);
+    setIsFollowing(prevState => !prevState);
 
     if (!localStorage.getItem(`following_${id}`)) {
       localStorage.setItem(`following_${id}`, true);
     } else if (localStorage.getItem(`following_${id}`)) {
       localStorage.removeItem(`following_${id}`);
     }
+
+    onFilterChange(localStorage);
   };
 
   const formattedFollowersCount = isFollowing
-    ? (followers * 10000 + 1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-    : (followers * 10000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    ? (followers * 10000 + 1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    : (followers * 10000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
   return (
     <Wrapper>
@@ -47,7 +56,7 @@ export const CardItem = ({ id, user, tweets, followers, avatar }) => {
         onClick={handleButtonClick}
         background={isFollowing}
       >
-        {isFollowing ? "Following" : "Follow"}
+        {isFollowing ? 'Following' : 'Follow'}
       </Button>
     </Wrapper>
   );

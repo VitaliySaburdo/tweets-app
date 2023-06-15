@@ -1,16 +1,46 @@
-import { CardItem } from "../CardItem/CardItem";
-import { List, StyledLink } from "./CardList.styled";
+import React, { useState } from 'react';
+import { CardItem } from '../CardItem/CardItem';
+import {
+  List,
+  StyledLink,
+  Wrapper,
+  StyledInput,
+  StyledOption,
+} from './CardList.styled';
 
-import { Button } from "../Button/Button";
+import { Button } from '../Button/Button';
 
 export const CardList = ({ cards }) => {
+  const [filter, setFilter] = useState('all');
+
+  const filteredCards = cards.filter(card => {
+    if (filter === 'follow') {
+      return card.follow === true;
+    } else if (filter === 'followings') {
+      return card.following === true;
+    } else {
+      return true;
+    }
+  });
+
+  const handleFilterChange = event => {
+    setFilter(event.target.value);
+  };
+
   return (
     <>
-      <StyledLink to="/">
-        <Button type="Button">Back</Button>
-      </StyledLink>
+      <Wrapper>
+        <StyledLink to="/">
+          <Button type="Button">Back</Button>
+        </StyledLink>
+        <StyledInput value={filter} onChange={handleFilterChange}>
+          <StyledOption value="all">Show All</StyledOption>
+          <StyledOption value="follow">Follow</StyledOption>
+          <StyledOption value="followings">Followings</StyledOption>
+        </StyledInput>
+      </Wrapper>
       <List>
-        {cards.map((card) => (
+        {filteredCards.map(card => (
           <CardItem
             key={card.id}
             id={card.id}

@@ -9,11 +9,18 @@ import {
 } from './SharedLayout.styled';
 import { Container } from '../Container/Container';
 import { Suspense } from 'react';
-import { Footer } from 'components/Footer/Footer';
+// import { Footer } from 'components/Footer/Footer';
 // import Icon from "../../image/twitter.svg";
 // import {Loader} from '../Loader/Loader'
 
 export const SharedLayout = () => {
+  const handleEmailLinkClick = () => {
+    window.location.href = 'mailto:vsaburdo@mail.com';
+  };
+
+  const handlePhoneLinkClick = () => {
+    window.location.href = 'tel:+380677764273';
+  };
   return (
     <>
       <Header>
@@ -27,10 +34,10 @@ export const SharedLayout = () => {
               <StyledNavLink to="/tweets">Tweets</StyledNavLink>
             </Nav>
             <Box>
-              <StyledLink href="mailto:vsaburdo@mail.com">
+              <StyledLink onClick={handleEmailLinkClick}>
                 vsaburdo@gmail.com
               </StyledLink>
-              <StyledLink href="tel:+380677764273">
+              <StyledLink onClick={handlePhoneLinkClick}>
                 +38 067 776 42 73
               </StyledLink>
             </Box>

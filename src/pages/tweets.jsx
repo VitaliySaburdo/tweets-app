@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { ApiService } from "../ApiService/ApiService";
-import { CardList } from "../components/CardList/CardList";
-import { Section } from "../components/Section/Section";
-import { Button } from "../components/Button/Button";
-import { Container } from "../components/Container/Container";
-import { Loader } from "../components/Loader/Loader";
-import * as Scroll from "react-scroll";
+import React, { useEffect, useState } from 'react';
+import { ApiService } from '../ApiService/ApiService';
+import { CardList } from '../components/CardList/CardList';
+import { Section } from '../components/Section/Section';
+import { Button } from '../components/Button/Button';
+import { Container } from '../components/Container/Container';
+import { Loader } from '../components/Loader/Loader';
+import * as Scroll from 'react-scroll';
 
 const Tweets = () => {
   const [items, setItems] = useState([]);
-  const [limit, setLimit] = useState(() => localStorage.getItem("limit") ?? 3);
+  const [limit, setLimit] = useState(() => localStorage.getItem('limit') ?? 3);
   const [reachedEnd, setReachedEnd] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [isFirstRender, setIsFirstRender] = useState(true);
@@ -38,7 +38,7 @@ const Tweets = () => {
   const LoadMore = () => {
     const newLimit = limit + 3;
     setLimit(newLimit);
-    localStorage.setItem("limit", newLimit.toString());
+    localStorage.setItem('limit', newLimit.toString());
     scrolling();
   };
 
@@ -56,7 +56,7 @@ const Tweets = () => {
         ) : (
           !isFirstRender &&
           reachedEnd && (
-            <Button style={{ margin: "0 auto" }} onClick={LoadMore}>
+            <Button style={{ margin: '0 auto' }} onClick={LoadMore}>
               Load More
             </Button>
           )
