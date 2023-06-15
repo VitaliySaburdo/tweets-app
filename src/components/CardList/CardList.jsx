@@ -27,6 +27,10 @@ export const CardList = ({ cards }) => {
     setFilter(event.target.value);
   };
 
+  const onFilterChange = id => {
+    console.log(id);
+  };
+
   return (
     <>
       <Wrapper>
@@ -48,6 +52,7 @@ export const CardList = ({ cards }) => {
             tweets={card.tweets}
             followers={card.followers}
             avatar={card.avatar}
+            onFilterChange={onFilterChange}
           />
         ))}
       </List>
