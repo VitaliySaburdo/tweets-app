@@ -14,17 +14,21 @@ export const CardList = ({ cards }) => {
   const [filter, setFilter] = useState('all');
   const [followings, setFollowings] = useState([]);
   const [follow, setFollow] = useState([]);
+
   const handleFilterChange = event => {
     setFilter(event.target.value);
   };
 
   const handleCardAction = cardId => {
     if (followings.includes(cardId)) {
+      console.log('first');
       setFollowings(prevState => prevState.filter(id => id !== cardId));
-    } else if (!followings.includes(cardId)) {
+    } else if (follow.includes(cardId)) {
+      console.log('second');
       setFollow(prevState => prevState.filter(id => id !== cardId));
       setFollowings(prevState => [...prevState, cardId]);
     } else {
+      console.log('third');
       setFollowings(prevState => [...prevState, cardId]);
     }
   };

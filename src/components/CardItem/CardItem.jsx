@@ -35,7 +35,7 @@ export const CardItem = ({
       localStorage.removeItem(`following_${id}`);
     }
 
-    onCardAction(id);
+    onCardAction(id, isFollowing);
   };
 
   const formattedFollowersCount = isFollowing
