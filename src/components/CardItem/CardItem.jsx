@@ -23,15 +23,15 @@ export const CardItem = ({
   onCardSelection,
 }) => {
   const [isFollowing, setIsFollowing] = useState(
-    () => localStorage.getItem(`following_${id}`) ?? false
+    () => localStorage.getItem(`following_${id}`) === 'true'
   );
 
   const handleButtonClick = () => {
     setIsFollowing(prevState => !prevState);
 
-    if (!localStorage.getItem(`following_${id}`)) {
-      localStorage.setItem(`following_${id}`, true);
-    } else if (localStorage.getItem(`following_${id}`)) {
+    if (!isFollowing) {
+      localStorage.setItem(`following_${id}`, 'true');
+    } else {
       localStorage.removeItem(`following_${id}`);
     }
 

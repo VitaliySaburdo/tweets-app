@@ -19,7 +19,6 @@ export const CardList = ({ cards }) => {
   };
 
   const handleCardSelection = (id, isSelected) => {
-    console.log(id, isSelected);
     if (isSelected) {
       setSelectedCards(prevSelectedCards =>
         prevSelectedCards.filter(cardId => cardId !== id)
@@ -52,7 +51,7 @@ export const CardList = ({ cards }) => {
         </StyledInput>
       </Wrapper>
       <List>
-        {cards.map(card => (
+        {filteredCards.map(card => (
           <CardItem
             key={card.id}
             id={card.id}
@@ -60,6 +59,7 @@ export const CardList = ({ cards }) => {
             tweets={card.tweets}
             followers={card.followers}
             avatar={card.avatar}
+            isSelected={selectedCards.includes(card.id)}
             onCardSelection={handleCardSelection}
           />
         ))}
