@@ -14,7 +14,14 @@ import line from '../../image/line.png';
 import frame from '../../image/frame.png';
 import logo from '../../image/logo.png';
 
-export const CardItem = ({ id, user, tweets, followers, avatar }) => {
+export const CardItem = ({
+  id,
+  user,
+  tweets,
+  followers,
+  avatar,
+  onCardAction,
+}) => {
   const [isFollowing, setIsFollowing] = useState(
     () => localStorage.getItem(`following_${id}`) === 'true'
   );
@@ -27,6 +34,8 @@ export const CardItem = ({ id, user, tweets, followers, avatar }) => {
     } else {
       localStorage.removeItem(`following_${id}`);
     }
+
+    onCardAction(id);
   };
 
   const formattedFollowersCount = isFollowing
@@ -46,7 +55,6 @@ export const CardItem = ({ id, user, tweets, followers, avatar }) => {
         type="button"
         onClick={handleButtonClick}
         background={isFollowing}
-        isFollowing={isFollowing}
       >
         {isFollowing ? 'Following' : 'Follow'}
       </Button>

@@ -12,10 +12,31 @@ import { Button } from '../Button/Button';
 
 export const CardList = ({ cards }) => {
   const [filter, setFilter] = useState('all');
-
+  const [followings, setFollowings] = useState([]);
+  const [follow, setFollow] = useState([]);
   const handleFilterChange = event => {
     setFilter(event.target.value);
   };
+
+  const handleCardAction = cardId => {
+    if (followings.includes(cardId)) {
+      setFollowings(prevState => prevState.filter(id => id !== cardId));
+    } else if (!followings.includes(cardId)) {
+      setFollow(prevState => prevState.filter(id => id !== cardId));
+      setFollowings(prevState => [...prevState, cardId]);
+    } else {
+      setFollowings(prevState => [...prevState, cardId]);
+    }
+  };
+
+  const filteredCards = cards.filter(card => {
+    if (filter === 'follow') {
+      return follow.includes(card.id);
+    } else if (filter === 'followings') {
+      return followings.includes(card.id);
+    }
+    return true;
+  });
 
   return (
     <>
@@ -30,7 +51,7 @@ export const CardList = ({ cards }) => {
         </StyledInput>
       </Wrapper>
       <List>
-        {cards.map(card => (
+        {filteredCards.map(card => (
           <CardItem
             key={card.id}
             id={card.id}
@@ -38,6 +59,8 @@ export const CardList = ({ cards }) => {
             tweets={card.tweets}
             followers={card.followers}
             avatar={card.avatar}
+            isFollowing={followings.includes(card.id)}
+            onCardAction={handleCardAction}
           />
         ))}
       </List>
