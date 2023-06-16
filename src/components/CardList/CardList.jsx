@@ -12,35 +12,31 @@ import { Button } from '../Button/Button';
 
 export const CardList = ({ cards }) => {
   const [filter, setFilter] = useState('all');
-  const [followings, setFollowings] = useState([]);
-  const [follow, setFollow] = useState([]);
+  const [followings, setFollowing] = useState([]);
 
   const handleFilterChange = event => {
     setFilter(event.target.value);
   };
 
-  const handleCardAction = cardId => {
-    if (followings.includes(cardId)) {
-      console.log('first');
-      setFollowings(prevState => prevState.filter(id => id !== cardId));
-    } else if (follow.includes(cardId)) {
-      console.log('second');
-      setFollow(prevState => prevState.filter(id => id !== cardId));
-      setFollowings(prevState => [...prevState, cardId]);
-    } else {
-      console.log('third');
-      setFollowings(prevState => [...prevState, cardId]);
-    }
+  const handleCardAction = (cardId, isFollowing) => {
+    setFollowing(prevState => ({
+      ...prevState,
+      [cardId]: !isFollowing,
+    }));
   };
 
-  const filteredCards = cards.filter(card => {
+  console.log(followings);
+
+  const filteredCards = () => {
     if (filter === 'follow') {
-      return follow.includes(card.id);
+      return cards.filter(card => followings[card.id] !== true);
     } else if (filter === 'followings') {
-      return followings.includes(card.id);
+      return cards.filter(card => followings[card.id] === true);
+    } else {
+      return cards;
     }
-    return true;
-  });
+  };
+  const Cards = filteredCards();
 
   return (
     <>
@@ -55,7 +51,7 @@ export const CardList = ({ cards }) => {
         </StyledInput>
       </Wrapper>
       <List>
-        {filteredCards.map(card => (
+        {Cards.map(card => (
           <CardItem
             key={card.id}
             id={card.id}
@@ -63,7 +59,6 @@ export const CardList = ({ cards }) => {
             tweets={card.tweets}
             followers={card.followers}
             avatar={card.avatar}
-            isFollowing={followings.includes(card.id)}
             onCardAction={handleCardAction}
           />
         ))}
