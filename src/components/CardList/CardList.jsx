@@ -25,8 +25,6 @@ export const CardList = ({ cards }) => {
     }));
   };
 
-  console.log(followings);
-
   const filteredCards = () => {
     if (filter === 'follow') {
       return cards.filter(card => followings[card.id] !== true);
