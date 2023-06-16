@@ -12,31 +12,10 @@ import { Button } from '../Button/Button';
 
 export const CardList = ({ cards }) => {
   const [filter, setFilter] = useState('all');
-  const [selectedCards, setSelectedCards] = useState([]);
 
   const handleFilterChange = event => {
     setFilter(event.target.value);
   };
-
-  const handleCardSelection = (id, isSelected) => {
-    if (isSelected) {
-      setSelectedCards(prevSelectedCards =>
-        prevSelectedCards.filter(cardId => cardId !== id)
-      );
-    } else {
-      setSelectedCards(prevSelectedCards => [...prevSelectedCards, id]);
-    }
-  };
-
-  const filteredCards = cards.filter(card => {
-    if (filter === 'follow') {
-      return card.follow;
-    } else if (filter === 'followings') {
-      return card.following;
-    } else {
-      return true;
-    }
-  });
 
   return (
     <>
@@ -51,7 +30,7 @@ export const CardList = ({ cards }) => {
         </StyledInput>
       </Wrapper>
       <List>
-        {filteredCards.map(card => (
+        {cards.map(card => (
           <CardItem
             key={card.id}
             id={card.id}
@@ -59,8 +38,6 @@ export const CardList = ({ cards }) => {
             tweets={card.tweets}
             followers={card.followers}
             avatar={card.avatar}
-            isSelected={selectedCards.includes(card.id)}
-            onCardSelection={handleCardSelection}
           />
         ))}
       </List>
