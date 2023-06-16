@@ -1,4 +1,4 @@
-Introduction
+# Introduction
 
 Introduction is like a summary. It shouldn't be too long as we don't want to
 read an essay on a project. We should describe in an interesting manner what's
