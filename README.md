@@ -19,7 +19,7 @@ The following libraries and technologies are used in the project:
 
 https://mockapi.io/ was used as a backend
 
-https://63ea64d73363c8700368743e.mockapi.io/users
+Link to backend: https://63ea64d73363c8700368743e.mockapi.io/users
 
 ## How to Install and Run the Project
 
