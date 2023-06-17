@@ -22,7 +22,7 @@ export const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Nezhinskaya str. 16, kv.5 Kyiv, Ukraine 36007
+                  Nezhinskaya str. 16, Kyiv, Ukraine 36007
                 </Link>
               </li>
               <li>
