@@ -52,3 +52,15 @@ ID.
 
 More detailed information about the status can be viewed by clicking on the
 icon, and in drop-down window to follow the link `Details`.
+
+## How it works
+
+![How it works](./assets/how-it-works.png)
+
+1. After each push to the `main` branch of the GitHub repository, a special
+   script (GitHub Action) from `.github/workflows/deploy.yml` file.
+2. All repository files are copied to the server where the project is
+   initialized and passes linting and assembly before deployment.
+3. If all steps were successful, the assembled production version of the project
+   files goes to the `gh-pages` branch. Otherwise, in the execution log The
+   script will indicate what the problem is.
