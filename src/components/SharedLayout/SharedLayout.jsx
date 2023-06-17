@@ -13,16 +13,8 @@ import { Container } from '../Container/Container';
 import { Suspense } from 'react';
 import { Footer } from 'components/Footer/Footer';
 import icons from '../../image/icons.svg';
-// import {Loader} from '../Loader/Loader'
 
 export const SharedLayout = () => {
-  const handleEmailLinkClick = () => {
-    window.location.href = 'mailto:vsaburdo@mail.com';
-  };
-
-  const handlePhoneLinkClick = () => {
-    window.location.href = 'tel:+380677764273';
-  };
   return (
     <>
       <Header>
@@ -38,11 +30,17 @@ export const SharedLayout = () => {
               <StyledNavLink to="/tweets">Tweets</StyledNavLink>
             </Nav>
             <Box>
-              <StyledLink onClick={handleEmailLinkClick}>
-                vsaburdo@gmail.com
+              <StyledLink href="mailto:vsaburdo@gmail.com">
+                <StyledSVG width="20" height="20">
+                  <use href={icons + '#mail'}></use>
+                </StyledSVG>
+                <span>vsaburdo@gmail.com</span>
               </StyledLink>
-              <StyledLink onClick={handlePhoneLinkClick}>
-                +38 067 776 42 73
+              <StyledLink href="tel:+38677764273">
+                <StyledSVG width="20" height="20">
+                  <use href={icons + '#phone'}></use>
+                </StyledSVG>
+                <span>+38 067 776 42 73</span>
               </StyledLink>
             </Box>
           </Wrapper>

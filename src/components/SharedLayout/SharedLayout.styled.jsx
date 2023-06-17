@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const Header = styled.header`
   height: 70px;
@@ -55,21 +55,28 @@ export const StyledNavLink = styled(NavLink)`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-family: 'Montserrat';
   text-align: center;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   text-transform: uppercase;
   color: #a499bd;
+  fill: #a499bd;
+
   text-decoration: none;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     color: #d13bd1;
+    fill: #d13bd1;
   }
 `;
 export const Box = styled.div`
