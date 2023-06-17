@@ -1,5 +1,11 @@
 # Tweet-app
 
+## Table of contents
+
+- [Introduction](#Introduction)
+- [Technologies](#Technologies)
+- [How to Install and Run the Project](#HowtoInstallandRuntheProject)
+
 ## Introduction
 
 I present to your attention a react application for working with user tweets.
