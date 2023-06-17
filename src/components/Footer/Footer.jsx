@@ -36,16 +36,24 @@ export const Footer = () => {
 
           <List>
             <li>
-              <SocialLink href="2" target="_blank" rel="noopener noreferrer">
+              <SocialLink
+                href="https://t.me/Vitaliy_Saburdo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <StyledSVG width="20" height="20">
                   <use href={icons + '#send'}></use>
                 </StyledSVG>
               </SocialLink>
             </li>
             <li>
-              <SocialLink href="3" target="_blank" rel="noopener noreferrer">
-                <StyledSVG width="20" height="20">
-                  <use href={icons + '#facebook'}></use>
+              <SocialLink
+                href="https://github.com/VitaliySaburdo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <StyledSVG width="30" height="30">
+                  <use href={icons + '#github'}></use>
                 </StyledSVG>
               </SocialLink>
             </li>

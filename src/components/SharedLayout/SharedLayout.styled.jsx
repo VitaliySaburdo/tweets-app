@@ -28,7 +28,7 @@ export const StyledSpan = styled.span`
 `;
 
 export const Main = styled.main`
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 158px);
 `;
 
 export const StyledNavLink = styled(NavLink)`
