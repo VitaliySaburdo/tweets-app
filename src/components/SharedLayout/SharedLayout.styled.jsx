@@ -27,12 +27,16 @@ export const StyledSpan = styled.span`
   }
 `;
 
+export const Main = styled.main`
+  min-height: calc(100vh - 140px);
+`
+
 export const StyledNavLink = styled(NavLink)`
   font-family: 'Montserrat';
   text-align: center;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
   text-transform: uppercase;
   color: #a499bd;
@@ -54,7 +58,7 @@ export const StyledLink = styled(Link)`
   text-align: center;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
   text-transform: uppercase;
   color: #a499bd;
