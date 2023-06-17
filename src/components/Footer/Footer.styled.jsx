@@ -8,7 +8,8 @@ export const FooterStyled = styled.footer`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 10px 0px 10px 0px;
+  justify-content: space-between;
+  padding: 10px 20px 20px 0px;
   height: 100%;
 `;
 
@@ -28,4 +29,35 @@ export const Link = styled.a`
   &:hover {
     color: #d13bd1;
   }
+`;
+
+export const SocialLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 0;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  :focus {
+    background-color: #d13bd1;
+  }
+`;
+
+export const List = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+`;
+
+export const StyledSVG = styled.svg`
+  fill: #a499bd;
 `;

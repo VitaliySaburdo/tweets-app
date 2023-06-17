@@ -1,5 +1,12 @@
 import { Container } from '../Container/Container';
-import { Wrapper, FooterStyled, Link } from './Footer.styled';
+import {
+  Wrapper,
+  FooterStyled,
+  Link,
+  SocialLink,
+  List,
+  StyledSVG,
+} from './Footer.styled';
 import icons from '../../image/icons.svg';
 
 export const Footer = () => {
@@ -27,32 +34,33 @@ export const Footer = () => {
             </ul>
           </address>
 
-          <ul>
+          <List>
             <li>
-              <a class="footer-social__link" href="2">
-                <svg width="20" height="20">
-                  <use href={icons + '#twitter'}></use>
-                </svg>
-              </a>
+              <SocialLink href="2" target="_blank" rel="noopener noreferrer">
+                <StyledSVG width="20" height="20">
+                  <use href={icons + '#send'}></use>
+                </StyledSVG>
+              </SocialLink>
             </li>
             <li>
-              <a class="footer-social__link" href="3">
-                <svg width="20" height="20">
+              <SocialLink href="3" target="_blank" rel="noopener noreferrer">
+                <StyledSVG width="20" height="20">
                   <use href={icons + '#facebook'}></use>
-                </svg>
-              </a>
+                </StyledSVG>
+              </SocialLink>
             </li>
             <li>
-              <a
-                class="footer-social__link"
+              <SocialLink
                 href="https://www.linkedin.com/in/vitaliy-saburdo-73363a264/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <svg width="20" height="20">
+                <StyledSVG width="20" height="20">
                   <use href={icons + '#linkedin'}></use>
-                </svg>
-              </a>
+                </StyledSVG>
+              </SocialLink>
             </li>
-          </ul>
+          </List>
         </Wrapper>
       </Container>
     </FooterStyled>

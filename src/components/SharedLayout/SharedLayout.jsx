@@ -7,11 +7,12 @@ import {
   Nav,
   StyledLink,
   Box,
+  StyledSVG,
 } from './SharedLayout.styled';
 import { Container } from '../Container/Container';
 import { Suspense } from 'react';
 import { Footer } from 'components/Footer/Footer';
-// import Icon from "../../image/twitter.svg";
+import icons from '../../image/icons.svg';
 // import {Loader} from '../Loader/Loader'
 
 export const SharedLayout = () => {
@@ -29,7 +30,9 @@ export const SharedLayout = () => {
           <Wrapper>
             <Nav>
               <StyledNavLink to="/" end>
-                {/* <img src={Icon} alt="Twitter Icon" /> */}
+                <StyledSVG width="20" height="20">
+                  <use href={icons + '#twitter'}></use>
+                </StyledSVG>
                 <span>Tweets App</span>
               </StyledNavLink>
               <StyledNavLink to="/tweets">Tweets</StyledNavLink>
@@ -46,10 +49,10 @@ export const SharedLayout = () => {
         </Container>
       </Header>
       <Main>
-      <Suspense>
-        <Outlet />
+        <Suspense>
+          <Outlet />
         </Suspense>
-        </Main>
+      </Main>
       <Footer />
     </>
   );

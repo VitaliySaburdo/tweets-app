@@ -29,7 +29,7 @@ export const StyledSpan = styled.span`
 
 export const Main = styled.main`
   min-height: calc(100vh - 140px);
-`
+`;
 
 export const StyledNavLink = styled(NavLink)`
   font-family: 'Montserrat';
@@ -43,13 +43,15 @@ export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+  fill: #a499bd;
   &:hover {
     color: #d13bd1;
+    fill: #d13bd1;
   }
 
   &.active {
     color: #ffffff;
+    fill: #ffffff;
   }
 `;
 
@@ -73,4 +75,9 @@ export const StyledLink = styled(Link)`
 export const Box = styled.div`
   display: flex;
   gap: 40px;
+`;
+
+export const StyledSVG = styled.svg`
+  fill: inherit;
+  margin-right: 3px;
 `;
