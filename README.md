@@ -4,7 +4,8 @@
 
 - [Introduction](#Introduction)
 - [Technologies](#Technologies)
-- [How to Install and Run the Project](#HowtoInstallandRuntheProject)
+- [How to Install and Run the Project](#How-to-Install-and-Run-the-Project)
+- [How to Use the Project](#How-to-Use-the-Project)
 
 ## Introduction
 
