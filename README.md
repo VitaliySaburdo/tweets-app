@@ -17,6 +17,10 @@ The following libraries and technologies are used in the project:
 - react-scroll
 - styled-components
 
+https://mockapi.io/ was used as a backend
+
+https://63ea64d73363c8700368743e.mockapi.io/users
+
 ## How to Install and Run the Project
 
 1. Make sure you have an LTS version of Node.js installed on your computer.
@@ -25,3 +29,26 @@ The following libraries and technologies are used in the project:
 3. Start development mode by running the `npm start` command.
 4. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
    page will automatically reload after saving changes to project files.
+
+## How to Use the Project
+
+### Deploy
+
+The production version of the project will be automatically linted, built and
+deploy to GitHub Pages, in the `gh-pages` branch, every time it is updated
+branch `main`. For example, after a direct push or an accepted pull request. For
+this it is necessary to edit the `homepage` field in the `package.json` file,
+replace `your_username` and `your_repo_name` with your own, and push the changes
+to GitHub.
+
+### Deployment status
+
+The deployment status of the latest commit is displayed with an icon next to its
+ID.
+
+- **Yellow color** - the project is being built and deployed.
+- **Green color** - deployment completed successfully.
+- **Red color** - an error occurred during linting, build or deployment.
+
+More detailed information about the status can be viewed by clicking on the
+icon, and in drop-down window to follow the link `Details`.
