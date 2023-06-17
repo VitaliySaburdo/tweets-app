@@ -29,7 +29,7 @@ export const Footer = () => {
                 <Link href="mailto:info@devstudio.com">info@devstudio.com</Link>
               </li>
               <li>
-                <Link href="tel:+380961111111">+38 096 111 11 11</Link>
+                <Link href="tel:+38677764273">+38 067 776 42 73</Link>
               </li>
             </ul>
           </address>
