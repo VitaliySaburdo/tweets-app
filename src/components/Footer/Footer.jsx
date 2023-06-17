@@ -48,7 +48,7 @@ export const Footer = () => {
             </li>
             <li>
               <SocialLink
-                href="https://github.com/VitaliySaburdo"
+                href="https://github.com/VitaliySaburdo/tweets-app"
                 target="_blank"
                 rel="noopener noreferrer"
               >
