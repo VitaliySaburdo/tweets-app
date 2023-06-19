@@ -6,6 +6,7 @@ import {
   Wrapper,
   StyledSelect,
   StyledOption,
+  SelectWrapper,
 } from './CardList.styled';
 
 import { Button } from '../Button/Button';
@@ -42,11 +43,13 @@ export const CardList = ({ cards }) => {
         <StyledLink to="/">
           <Button type="Button">Back</Button>
         </StyledLink>
-        <StyledSelect value={filter} onChange={handleFilterChange}>
-          <StyledOption value="all">Show All</StyledOption>
-          <StyledOption value="follow">Follow</StyledOption>
-          <StyledOption value="followings">Followings</StyledOption>
-        </StyledSelect>
+        <SelectWrapper>
+          <StyledSelect value={filter} onChange={handleFilterChange}>
+            <StyledOption value="all">Show All</StyledOption>
+            <StyledOption value="follow">Follow</StyledOption>
+            <StyledOption value="followings">Followings</StyledOption>
+          </StyledSelect>
+        </SelectWrapper>
       </Wrapper>
       <List>
         {Cards.map(card => (
