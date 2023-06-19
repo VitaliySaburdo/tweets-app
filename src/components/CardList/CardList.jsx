@@ -4,7 +4,7 @@ import {
   List,
   StyledLink,
   Wrapper,
-  StyledInput,
+  StyledSelect,
   StyledOption,
 } from './CardList.styled';
 
@@ -42,11 +42,11 @@ export const CardList = ({ cards }) => {
         <StyledLink to="/">
           <Button type="Button">Back</Button>
         </StyledLink>
-        <StyledInput value={filter} onChange={handleFilterChange}>
+        <StyledSelect value={filter} onChange={handleFilterChange}>
           <StyledOption value="all">Show All</StyledOption>
           <StyledOption value="follow">Follow</StyledOption>
           <StyledOption value="followings">Followings</StyledOption>
-        </StyledInput>
+        </StyledSelect>
       </Wrapper>
       <List>
         {Cards.map(card => (

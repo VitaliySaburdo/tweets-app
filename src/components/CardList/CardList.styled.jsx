@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const StyledInput = styled.select`
+export const StyledSelect = styled.select`
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
